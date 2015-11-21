@@ -7,7 +7,7 @@
         <link href="<?php echo base_url();?>materials/jquery.dropdown.css" rel="stylesheet">
         
         <link rel="stylesheet" href="<?php echo base_url();?>materials/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="<?php echo base_url();?>materials/bootstrap-material-design/dist/css/material-blue.css">
+        <link rel="stylesheet" href="<?php echo base_url();?>materials/bootstrap-material-design/dist/css/material-fullpalette.css">
         <link rel="stylesheet" href="<?php echo base_url();?>materials/bootstrap-material-design/dist/css/ripples.min.css">
         <link rel="stylesheet" href="<?php echo base_url();?>materials/bootstrap-material-design/dist/css/roboto.min.css">
         

@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'architectsdaughter';
+  src: url('../Fonts/Architects_Daughter/ArchitectsDaughter.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'chewy';
+  src: url('../Fonts/Chewy/Chewy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'fredericka';
+  src: url('../Fonts/Fredericka_the_Great/FrederickatheGreat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'lobstertwo';
+  src: url('../Fonts/Lobster_Two/LobsterTwo-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'mountainsofchristmas';
+  src: url('../Fonts/Mountains_of_Christmas/MountainsofChristmas-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'droidserif';
+  src: url('../Fonts/Droid_Serif/DroidSerif.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'lora';
+  src: url('../Fonts/Lora/Lora-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
