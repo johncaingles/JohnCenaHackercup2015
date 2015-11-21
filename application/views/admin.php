@@ -39,8 +39,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     
                 });
                 
-                $("#checkBtn").click(function(){
-                    
+                $("#optsBtns > .btn").click(function(){
+                    $("#optsBtns > .btn").removeClass("active");
+                    $(this).addClass("active");
                 });
             });
         </script>
@@ -83,51 +84,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <div style="">Where are you going?</div>
-                        <div class="col-md-12" style="padding:0;margin:0;margin-top:20px;">
-                            <div class="form-group col-md-4" style="padding:0;margin:0;">
-                                <div class="col-md-12">
-                                    <select id="fromDD" class="form-control">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                            </div>
+                        <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+                          <li class="col-md-4 active" style="padding:0;"><a href="#homeT" data-toggle="tab">Load</a></li>
+                          <li class="col-md-4" style="padding:0;"><a href="#siT" data-toggle="tab">Safety Incident</a></li>
+                          <li class="col-md-4" style="padding:0;"><a href="#tmT" data-toggle="tab">Train Management</a></li>
+                        </ul>
+                        <div id="myTabContent" class="tab-content">
+                          <div class="tab-pane fade active in" id="homeT">
+                              
+                          </div>
+                          <div class="tab-pane fade" id="siT">
                             
-                            <div class="col-md-2" style="padding:0;margin:0;">to</div>
+                          </div>
+                          <div class="tab-pane fade" id="tmT">
                             
-                            <div class="form-group col-md-4" style="padding:0;margin:0;">
-                                <div class="col-md-12">
-                                    <select id="toDD" class="form-control">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-2">
-                                <div id="checkBtn" class="btn btn-primary btn-sm">Check</div>
-                            </div>
+                          </div>
                         </div>
-                        
-                        <div class="alert alert-success col-md-12" style="display:none;">
-                            <strong>Well done!</strong> You successfully read
-                            <a href="javascript:void(0)" class="alert-link">this important alert message</a>.
+                        <div style="width:80px;">
+                            <input type="number" class="form-control" id="time" placeholder="Time" min="1" max="12">:<input type="number" class="form-control" id="time" placeholder="Time" min="00" max="59">
                         </div>
-                        <div class="alert alert-danger col-md-12" style="display:none;">
-                            <strong>Oh snap!</strong>
-                            <a href="javascript:void(0)" class="alert-link">Change a few things up</a> and try submitting again.
-                        </div>
-                        <div class="alert alert-warning col-md-12" style="display:none;">
-                            <p>Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna,
-                                <a href="javascript:void(0)" class="alert-link">vel scelerisque nisl consectetur et</a>.
-                            </p>
+                        <div class="col-md-12" style="text-align:center;">
+                            <a href="javascript:void(0)" class="btn btn-primary btn-lg">Update</a>
                         </div>
                     </div>
                 </div>

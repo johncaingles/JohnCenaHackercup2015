@@ -10,9 +10,12 @@
         <link rel="stylesheet" href="<?php echo base_url();?>materials/bootstrap-material-design/dist/css/material-fullpalette.css">
         <link rel="stylesheet" href="<?php echo base_url();?>materials/bootstrap-material-design/dist/css/ripples.min.css">
         <link rel="stylesheet" href="<?php echo base_url();?>materials/bootstrap-material-design/dist/css/roboto.min.css">
+
+        <link rel="stylesheet" href="<?php echo base_url();?>materials/jquery-ui/themes/base/jquery-ui.min.css">
         
         <link rel="stylesheet" href="<?php echo base_url();?>materials/Styles/style.css">
         
         <script src="<?php echo base_url();?>materials/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="<?php echo base_url();?>materials/bootstrap-material-design/dist/js/material.min.js"></script>
         <script src="<?php echo base_url();?>materials/bootstrap-material-design/dist/js/ripples.min.js"></script>
+        <script src="<?php echo base_url();?>materials/jquery-ui/jquery-ui.min.js"></script>
