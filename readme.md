@@ -5,11 +5,11 @@ The application will allow officials from the train stations to upload various d
 
 #Screenshots
 
-![<Main>](/Screenshots/Main.png)
+![<Main>](/Screenshots/Main.PNG)
 
-![<MobileRushHour>](/Screenshots/MobileRushHour.png)
+![<MobileRushHour>](/Screenshots/MobileRushHour.jpg)
 
-![<Admin>](/Screenshots/Admin.png)
+![<Admin>](/Screenshots/Admin.PNG)
 
 
 ## Tech and Data Used
@@ -43,7 +43,7 @@ Open Data
 - Light Rail Transit Line 1 and 2 - Peak-Hour Load Factor 2009-2013
 
 ## Credits
-*<Arvin Medina - Frontend/Backend>
-*<Kingston Koa - Backend>
-*<Alec Tan - Assets>
-*<John Caingles - Backend>
+*Arvin Medina - Frontend/Backend
+*Kingston Koa - Backend
+*Alec Tan - Assets
+*John Caingles - Backend
