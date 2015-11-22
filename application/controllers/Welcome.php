@@ -27,4 +27,19 @@ class Welcome extends CI_Controller {
     {
  		$this->load->view('admin');
     }
+    
+    public function isPeakHour()
+    {
+        $this->PassengerLoad->isPeakHour();
+    }
+    
+    public function checkIncident2()
+    {
+        $this->IncTwo->checkIncident2();
+    }
+    
+    public function checkIncident1()
+    {
+        $this->IncOne->checkIncident1();
+    }
 }
