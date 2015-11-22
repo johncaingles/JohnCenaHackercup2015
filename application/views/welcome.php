@@ -9,14 +9,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <style type="text/css">
             body{
-/*
                 background-image: url('materials/img/welcBack.png');
                 background-size: cover;
                 background-position: center !important;
                 background-repeat: no-repeat !important;
                 background-attachment: fixed;
-*/
-                background-color: #4e7c88;
+/*                background-color: #4e7c88;*/
             }
         </style>
         
@@ -49,24 +47,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             data: {"hour" : hour},
                             url: 'Welcome/checkIncident1',
                             dataType: "json",
+                            beforeSend: function(){
+                                $("#loadingGif").fadeIn();
+                            },
                             success: function (data) {
-                                var flag = true;
-                                var problems = "";
-                                for (var key in data[0]){
-                                    if (data[0].hasOwnProperty(key) && key != 'id' && key != 'time') {
-                                        if(parseInt(data[0][key]) > 0){
-                                            flag = false;
-                                            problems += key + "<br>";
+                                $("#loadingGif").delay(1000).fadeOut(1000, function(){
+                                   var flag = true;
+                                    var problems = "";
+                                    for (var key in data[0]){
+                                        if (data[0].hasOwnProperty(key) && key != 'id' && key != 'time') {
+                                            if(parseInt(data[0][key]) > 0){
+                                                flag = false;
+                                                problems += key + "<br>";
+                                            }
                                         }
                                     }
-                                }
-                                if(!flag){
-                                    $("#alerts > .alert-danger").html("You cannot ride the train because of the following problems:<br> " + problems);
-                                    $("#alerts > .alert-danger").fadeIn();
-                                }else{
-                                    $("#alerts > .alert-success").html("You can ride the train with ease!");
-                                    $("#alerts > .alert-success").fadeIn();
-                                }
+                                    if(!flag){
+                                        $("#alerts > .alert-danger").html("You cannot ride the train because of the following problems:<br> " + problems);
+                                        $("#alerts > .alert-danger").fadeIn();
+                                    }else{
+                                        $("#alerts > .alert-success").html("You can ride the train with ease!");
+                                        $("#alerts > .alert-success").fadeIn();
+                                    } 
+                                });
                             }
                         });
                     }else if($("#linesBtnWrapper > .btn.picked > div").text() == 'LRT 2'){
@@ -75,24 +78,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             data: {"hour" : hour},
                             url: 'Welcome/checkIncident2',
                             dataType: "json",
+                            beforeSend: function(){
+                                $("#loadingGif").fadeIn();
+                            },
                             success: function (data) {
-                                var flag = true;
-                                var problems = "";
-                                for (var key in data[0]){
-                                    if (data[0].hasOwnProperty(key) && key != 'id' && key != 'time') {
-                                        if(parseInt(data[0][key]) > 0){
-                                            flag = false;
-                                            problems += key + "<br>";
+                                $("#loadingGif").delay(1000).fadeOut(1000, function(){
+                                   var flag = true;
+                                    var problems = "";
+                                    for (var key in data[0]){
+                                        if (data[0].hasOwnProperty(key) && key != 'id' && key != 'time') {
+                                            if(parseInt(data[0][key]) > 0){
+                                                flag = false;
+                                                problems += key + "<br>";
+                                            }
                                         }
                                     }
-                                }
-                                if(!flag){
-                                    $("#alerts > .alert-danger").html("You cannot ride the train because of the following problems:<br> " + problems);
-                                    $("#alerts > .alert-danger").fadeIn();
-                                }else{
-                                    $("#alerts > .alert-success").html("You can ride the train with ease!");
-                                    $("#alerts > .alert-success").fadeIn();
-                                }
+                                    if(!flag){
+                                        $("#alerts > .alert-danger").html("You cannot ride the train because of the following problems:<br> " + problems);
+                                        $("#alerts > .alert-danger").fadeIn();
+                                    }else{
+                                        $("#alerts > .alert-success").html("You can ride the train with ease!");
+                                        $("#alerts > .alert-success").fadeIn();
+                                    } 
+                                });
                             }
                         });
                     }else{
@@ -101,16 +109,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             data: {"from" : $("#fromDD").val(),"hour" : hour},
                             url: 'Welcome/isPeakHour',
                             dataType: "json",
+                            beforeSend: function(){
+                                $("#loadingGif").fadeIn();
+                            },
                             success: function (data) {
-                                if(data[0][$("#fromDD").val()] > 150){
-                                    $("#alerts > .alert-warning > p").html("You can ride the train but is a large amount of people waiting in the platform right now<br>As of " + hour + ":00 there are " + data[0][$("#fromDD").val()] + " number of people waiting on the platform.");
-                                    $("#alerts > .alert-warning").fadeIn();
-                                }else if(false){
-                                    
-                                }else{
-                                    $("#alerts > .alert-success").html("You can ride the train with ease!");
-                                    $("#alerts > .alert-success").fadeIn();
-                                }
+                                $("#loadingGif").delay(3000).fadeOut(function(){
+                                   if(data[0][$("#fromDD").val()] > 150){
+                                        $("#alerts > .alert-warning > p").html("You can ride the train but is a large amount of people waiting in the platform right now<br>As of " + hour + ":00 there are " + data[0][$("#fromDD").val()] + " number of people waiting on the platform.");
+                                        $("#alerts > .alert-warning").fadeIn();
+                                    }else if(false){
+
+                                    }else{
+                                        $("#alerts > .alert-success").html("You can ride the train with ease!");
+                                        $("#alerts > .alert-success").fadeIn();
+                                    } 
+                                });
                             }
                         });
                     }
@@ -222,6 +235,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <a href="javascript:void(0)" class="alert-link">vel scelerisque nisl consectetur et</a>.
                                 </p>
                             </div>
+                        </div>
+                        
+                        <div id="loadingGif" class="col-md-12" style="text-align:center;display:none;">
+                            <img src="<?php echo base_url();?>materials/img/loadingGif.gif" width="120vw">
                         </div>
                     </div>
                 </div>
