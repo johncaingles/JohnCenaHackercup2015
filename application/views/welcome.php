@@ -115,7 +115,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             success: function (data) {
                                 $("#loadingGif").delay(3000).fadeOut(function(){
                                    if(data[0][$("#fromDD").val()] > 150){
-                                        $("#alerts > .alert-warning > p").html("You can ride the train but is a large amount of people waiting in the platform right now<br>As of " + hour + ":00 there are " + data[0][$("#fromDD").val()] + " number of people waiting on the platform.");
+                                        $("#alerts > .alert-warning > p").html("You can ride the train but there is a large amount of people waiting in the platform right now.<br>As of " + hour + ":00 there are " + data[0][$("#fromDD").val()] + " number of people waiting on the platform.");
                                         $("#alerts > .alert-warning").fadeIn();
                                     }else if(false){
 
