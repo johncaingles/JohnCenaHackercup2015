@@ -9,14 +9,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <style type="text/css">
             body{
-/*
-                background-image: url('materials/img/welcBack.png');
+                background-image: url('<?php echo base_url();?>materials/img/welcBack.png');
                 background-size: cover;
                 background-position: center !important;
                 background-repeat: no-repeat !important;
                 background-attachment: fixed;
-*/
-                background-color: #4e7c88;
+/*                background-color: #4e7c88;*/
             }
             #loadI::-webkit-inner-spin-button, 
             #loadI::-webkit-outer-spin-button { 
