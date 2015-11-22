@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <style type="text/css">
             body{
-                background-image: url('materials/img/welcBack.png');
+                background-image: url('<?php echo base_url();?>materials/img/welcBack.png');
                 background-size: cover;
                 background-position: center !important;
                 background-repeat: no-repeat !important;
@@ -21,6 +21,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script>
             $(document).ready(function() {
                 $.material.init();
+                var mrtStations='<option value="north_avenue">North Avenue</option><option value="quezon_avenue">Quezon Avenue</option><option value="gma_kamuning">GMA Kamuning</option><option value="araneta_center_cubao">Araneta Center Cubao</option><option value="santolan">Santolan</option><option value="ortigas">Ortigas</option><option value="shaw_boulevard">Shaw Boulevard</option><option value="boni">Boni</option><option value="guadalupe">Guadalupe</option><option value="buendia">Buendia</option><option value="ayala">Ayala</option><option value="magallanes">Magallanes</option>';
+                var lrt1Stations='<option value="roosevelt">Roosevelt</option><option value="balintawak">Balintawak</option><option value="monumento">Monumento</option><option value="Fifth Avenue">Fifth Avenue</option><option value="r_papa">R. Papa</option><option value="abad_santos">Abad Santos</option><option value="blumentritt">Blumentritt</option><option value="tayuman">Tayuman</option><option value="bambang">Bambang</option><option value="doroteo_jose">Doroteo Jose</option><option value="carriedo">Carriedo</option><option value="central_terminal">Central Terminal</option><option value="united_nations">United Nations</option><option value="pedro_gil">Pedro Gil</option><option value="quirino">Quirino</option><option value="vito_cruz">Vito Cruz</option><option value="gil_puyat">Gil Puyat</option><option value="libertad">Libertad</option><option value="edsa">EDSA</option><option value="baclaran">Baclaran</option>';
+                var lrt2Stations='<option value="recto">Recto</option><option value="legarda">Legarda</option><option value="pureza">Pureza</option><option value="v_mapa">V. Mapa</option><option value="j_ruiz">J. Ruiz</option><option value="gilmore">Gilmore</option><option value="betty_go-belmonte">Betty Go-Belmonte</option><option value="araneta_center-cubao">Araneta Center - Cubao</option><option value="anonas">Anonas</option><option value="katipunan">Katipunan</option><option value="santolan">Santolan</option>';
+                
                 
                 $("#linesBtnWrapper > .btn").click(function(){
                     $("#linesBtnWrapper > .btn").removeClass("picked");
@@ -34,6 +38,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     $("#btnRow").animate({"top": "10px"}, function(){
                         $("#afterCont").slideDown();
                     });
+                    
+                    if($("#linesBtnWrapper > .btn.picked > div").text() == 'MRT'){
+                        $("#fromDD").html(mrtStations);
+                        $("#toDD").html(mrtStations);
+                    }else if($("#linesBtnWrapper > .btn.picked > div").text() == 'LRT 1'){
+                        $("#fromDD").html(lrt1Stations);
+                        $("#toDD").html(lrt1Stations);
+                    }else{
+                        $("#fromDD").html(lrt2Stations);
+                        $("#toDD").html(lrt2Stations);
+                    }
                     
                     $("#alerts .alert").hide();
                 });
@@ -160,9 +175,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
                     <div id="linesBtnWrapper">
-                        <div href="javascript:void(0)" class="btn btn-material-light-blue-300 btn-primary btn-raised" style="width:30%;height:20vh;"><div style="font-family:'lora';font-size:5vmin;margin-top:28%;">LRT 1</div></div>
-                        <div href="javascript:void(0)" class="btn btn-material-light-blue-300 btn-primary btn-raised" style="width:30%;height:20vh;"><div style="font-family:'lora';font-size:5vmin;margin-top:28%;">LRT 2</div></div>
-                        <div href="javascript:void(0)" class="btn btn-material-light-blue-300 btn-primary btn-raised" style="width:30%;height:20vh;"><div style="font-family:'lora';font-size:5vmin;margin-top:28%;">MRT</div></div>
+                        <div href="javascript:void(0)" class="btn btn-material-light-blue-300 btn-primary btn-raised" style="width:30%;height:20vh;border-radius:10px;"><div style="font-family:'droidserif';font-size:5vmin;margin-top:28%;">LRT 1</div></div>
+                        <div href="javascript:void(0)" class="btn btn-material-light-blue-300 btn-primary btn-raised" style="width:30%;height:20vh;border-radius:10px;"><div style="font-family:'droidserif';font-size:5vmin;margin-top:28%;">LRT 2</div></div>
+                        <div href="javascript:void(0)" class="btn btn-material-light-blue-300 btn-primary btn-raised" style="width:30%;height:20vh;border-radius:10px;"><div style="font-family:'droidserif';font-size:5vmin;margin-top:28%;">MRT</div></div>
                     </div>
                 </div>
                 <div class="col-md-3"></div>
@@ -179,18 +194,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="form-group col-md-4" style="padding:0;margin:0;">
                                 <div class="col-md-12">
                                     <select id="fromDD" class="form-control">
-                                        <option value="north_avenue">North Avenue</option>
-                                        <option value="quezon_avenue">Quezon Avenue</option>
-                                        <option value="gma_kamuning">GMA Kamuning</option>
-                                        <option value="araneta_center_cubao">Araneta Center Cubao</option>
-                                        <option value="santolan">Santolan</option>
-                                        <option value="ortigas">Ortigas</option>
-                                        <option value="shaw_boulevard">Shaw Boulevard</option>
-                                        <option value="boni">Boni</option>
-                                        <option value="guadalupe">Guadalupe</option>
-                                        <option value="buendia">Buendia</option>
-                                        <option value="ayala">Ayala</option>
-                                        <option value="magallanes">Magallanes</option>
                                     </select>
                                 </div>
                             </div>
@@ -200,18 +203,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="form-group col-md-4" style="padding:0;margin:0;">
                                 <div class="col-md-12">
                                     <select id="toDD" class="form-control">
-                                        <option value="north_avenue">North Avenue</option>
-                                        <option value="quezon_avenue">Quezon Avenue</option>
-                                        <option value="gma_kamuning">GMA Kamuning</option>
-                                        <option value="araneta_center_cubao">Araneta Center Cubao</option>
-                                        <option value="santolan">Santolan</option>
-                                        <option value="ortigas">Ortigas</option>
-                                        <option value="shaw_boulevard">Shaw Boulevard</option>
-                                        <option value="boni">Boni</option>
-                                        <option value="guadalupe">Guadalupe</option>
-                                        <option value="buendia">Buendia</option>
-                                        <option value="ayala">Ayala</option>
-                                        <option value="magallanes">Magallanes</option>
                                     </select>
                                 </div>
                             </div>
